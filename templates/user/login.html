@@ -1,0 +1,72 @@
+{% extends 'base_welcome.html' %}
+{% load static %}
+
+{% block style_html %}
+    <style type="text/css" media="screen">
+        .divider:after,
+        .divider:before {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #eee;
+        }
+        .h-custom {
+            height: calc(100% - 73px);
+        }
+        @media (max-width: 450px) {
+            .h-custom {
+                height: 100%;
+            }
+        }
+    </style>
+{% endblock style_html %}
+
+{% block content %}
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-9 col-lg-6 col-xl-5">
+                    <img src="{% static 'img/ill/Flow.png' %}" class="img-fluid"
+                        alt="Sample image">
+                </div>
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                    <div class="d-flex flex-row align-items-center justify-content-center">
+                        <p class="lead fw-normal mb-0 me-3">Login Page</p>
+                    </div>
+                    <div class="divider d-flex align-items-center my-4">
+                    </div>
+                    <form method="POST" action="{% url 'user:login' %}">
+                        {% csrf_token %}
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <input type="email" name="email" id="email" class="form-control form-control-lg"
+                                placeholder="Enter a valid email address" />
+                            <label class="form-label" for="email">Email address</label>
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-3">
+                            <input type="password" name="password" id="password" class="form-control form-control-lg"
+                                placeholder="Enter password" />
+                            <label class="form-label" for="password">Password</label>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#!" class="text-body">Forgot password?</a>
+                        </div>
+
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                            <button type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+                                class="link-danger">Register</a></p>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        {% include "partial/footer.html" %}
+    </section>
+{% endblock content %}

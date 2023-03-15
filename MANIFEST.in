@@ -1,0 +1,4 @@
+include db.sqlite3
+include LICENSE
+recursive-include templates/ *
+recursive-include static/ *

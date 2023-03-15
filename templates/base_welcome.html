@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>Welcome To LMS</title>
+    </head>
+
+    {% block style_html %}
+
+    {% endblock style_html %}
+
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/mdb.rtl.min.css' %}" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" media="screen" title="no title" charset="utf-8">
+    <body>
+        {% block content %}
+
+        {% endblock content %}
+    </body>
+    <script src="{% static 'js/mdb.min.js' %}" charset="utf-8"></script>
+    <script src="{% static 'js/all.min.js' %}" charset="utf-8"></script>
+</html>

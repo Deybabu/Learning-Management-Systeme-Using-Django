@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+Django = "*"
+Sphinx = "*"
+guzzle_sphinx_theme = "*"
+
+[dev-packages]
+ipython = "*"
+ipdb = "*"
+pylint = "*"
+autopep8 = "*"
+django_linter = "*"
+django-debug-toolbar = "*"
+django-extensions = "*"
+rope = "*"
+
+[requires]
+python_version = "3.9"
